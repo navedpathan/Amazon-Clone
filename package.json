@@ -6,9 +6,22 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@reduxjs/toolkit": "^1.8.1",
+    "@stripe/stripe-js": "^1.29.0",
+    "axios": "^0.27.2",
+    "firebase": "^9.8.0",
+    "firebase-admin": "^10.2.0",
+    "micro": "^9.3.4",
+    "moment": "^2.29.3",
     "next": "latest",
+    "next-auth": "^4.3.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-currency-formatter": "^1.1.0",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.1",
+    "react-responsive-carousel": "^3.2.23",
+    "stripe": "^8.220.0"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
