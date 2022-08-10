@@ -3,11 +3,10 @@ import Header from "../components/Header";
 import moment from 'moment';
 import db from "../firebase";
 import Order from '../components/Order';
-import { collection } from '@firebase/firestore';
 
 const Orders = ({ orders }) => {
-  const [session] = useSession();
-
+  const session = useSession();
+  
   console.log(orders);
 
   return (
@@ -20,7 +19,7 @@ const Orders = ({ orders }) => {
               <h2>{orders.length} Orders</h2>
             ) : (
               <h2>Please sign in to see your orders</h2>
-            )};
+            )}
            
            <div className="mt-5 space-y-4">
              {orders?.map((
@@ -36,7 +35,7 @@ const Orders = ({ orders }) => {
                timestamp={timestamp}
                images={images}
                />
-             ))};
+             ))}
            </div>
         </main>
     </div>
@@ -74,7 +73,7 @@ export async function getServerSideProps(context) {
       images: order.data().images,
       timestamp: moment(order.data().timestamp.toDate()).unix(),
       items: (
-        await stripe.checkout.session.listlineItems(order.id, {
+        await stripe.checkout.sessions.listLineItems(order.id, {
           limit: 100
         })
       ).data,
