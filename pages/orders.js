@@ -7,7 +7,7 @@ import Order from '../components/Order';
 const Orders = ({ orders }) => {
   const session = useSession();
   
-  console.log(orders);
+  console.log(orders)
 
   return (
     <div>
